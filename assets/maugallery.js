@@ -1,4 +1,15 @@
-(function($) {
+    const images = [
+      "./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.AVIF",
+      "./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.AVIF",
+      "./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.AVIF",
+      "./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.AVIF",
+      "./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.AVIF",
+      "./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.AVIF",
+      "./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.AVIF",
+      "./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.AVIF",
+      "./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.AVIF"
+    ];
+    (function($) {
   $.fn.mauGallery = function(options) {
     var options = $.extend($.fn.mauGallery.defaults, options);
     let tagsCollection = [];
@@ -195,7 +206,11 @@
       next = imagesCollection[index] || imagesCollection[0];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
+
+
+
     createLightBox(gallery, lightboxId, navigation) {
+      let currentIndex = 0;
       gallery.append(`<div class="modal fade" id="${
         lightboxId ? lightboxId : "galleryLightbox"
       }" tabindex="-1" role="dialog" aria-hidden="true">
@@ -217,6 +232,28 @@
                     </div>
                 </div>
             </div>`);
+              // Récupérer la modale et les boutons de navigation
+  const lightbox = $("#" + lightboxId);
+  const prevButton = lightbox.find(".mg-prev");
+  const nextButton = lightbox.find(".mg-next");
+
+  // Gérer l'événement du clic sur le bouton "mg-prev"
+  prevButton.click(function() {
+    currentIndex--;
+  if (currentIndex < 0) {
+    currentIndex = images.length - 1;
+  }
+  $(".lightboxImage").attr("src", images[currentIndex]);
+  });
+
+  // Gérer l'événement du clic sur le bouton "mg-next"
+  nextButton.click(function() {
+    currentIndex++;
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
+  }
+  $(".lightboxImage").attr("src", images[currentIndex]);
+  });
     },
     showItemTags(gallery, position, tags) {
       let tagItems =
