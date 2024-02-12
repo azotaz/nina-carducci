@@ -194,7 +194,8 @@
             imagesCollection.push($(this).children("img"));
           }
         });
-      }
+      };
+ 
       let index = 0,
         next = null;
 
@@ -232,12 +233,12 @@
                     </div>
                 </div>
             </div>`);
-              // Récupérer la modale et les boutons de navigation
+             
   const lightbox = $("#" + lightboxId);
   const prevButton = lightbox.find(".mg-prev");
   const nextButton = lightbox.find(".mg-next");
 
-  // Gérer l'événement du clic sur le bouton "mg-prev"
+
   prevButton.click(function() {
     currentIndex--;
   if (currentIndex < 0) {
@@ -246,7 +247,7 @@
   $(".lightboxImage").attr("src", images[currentIndex]);
   });
 
-  // Gérer l'événement du clic sur le bouton "mg-next"
+
   nextButton.click(function() {
     currentIndex++;
   if (currentIndex >= images.length) {
