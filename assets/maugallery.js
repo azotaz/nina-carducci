@@ -1,15 +1,4 @@
-    const images = [
-      "./assets/images/gallery/concerts/aaron-paul-wnX-fXzB6Cw-unsplash.AVIF",
-      "./assets/images/gallery/entreprise/ali-morshedlou-WMD64tMfc4k-unsplash.AVIF",
-      "./assets/images/gallery/entreprise/jason-goodman-tHO1_OuKbg0-unsplash.AVIF",
-      "./assets/images/gallery/mariage/hannah-busing-RvF2R_qMpRk-unsplash.AVIF",
-      "./assets/images/gallery/portraits/ade-tunji-rVkhWWZFAtQ-unsplash.AVIF",
-      "./assets/images/gallery/mariage/jakob-owens-SiniLJkXhMc-unsplash.AVIF",
-      "./assets/images/gallery/portraits/nino-van-prattenburg--443cl1uR_8-unsplash.AVIF",
-      "./assets/images/gallery/concerts/austin-neill-hgO1wFPXl3I-unsplash.AVIF",
-      "./assets/images/gallery/entreprise/mateus-campos-felipe-Fsgzm8N0hIY-unsplash.AVIF"
-    ];
-    (function($) {
+(function($) {
   $.fn.mauGallery = function(options) {
     var options = $.extend($.fn.mauGallery.defaults, options);
     let tagsCollection = [];
@@ -93,7 +82,7 @@
           `<div class='item-column mb-4 col-${Math.ceil(12 / columns)}'></div>`
         );
       } else if (columns.constructor === Object) {
-        var columnClasses = "";
+        let columnClasses = "";
         if (columns.xs) {
           columnClasses += ` col-${Math.ceil(12 / columns.xs)}`;
         }
@@ -161,7 +150,7 @@
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i ;
+          index = i-1 ;
         }
       });
       next =
@@ -194,24 +183,19 @@
             imagesCollection.push($(this).children("img"));
           }
         });
-      };
- 
+      }
       let index = 0,
         next = null;
 
       $(imagesCollection).each(function(i) {
         if ($(activeImage).attr("src") === $(this).attr("src")) {
-          index = i;
+          index = i+1;
         }
       });
       next = imagesCollection[index] || imagesCollection[0];
       $(".lightboxImage").attr("src", $(next).attr("src"));
     },
-
-
-
     createLightBox(gallery, lightboxId, navigation) {
-      let currentIndex = 0;
       gallery.append(`<div class="modal fade" id="${
         lightboxId ? lightboxId : "galleryLightbox"
       }" tabindex="-1" role="dialog" aria-hidden="true">
@@ -233,28 +217,6 @@
                     </div>
                 </div>
             </div>`);
-             
-  const lightbox = $("#" + lightboxId);
-  const prevButton = lightbox.find(".mg-prev");
-  const nextButton = lightbox.find(".mg-next");
-
-
-  prevButton.click(function() {
-    currentIndex--;
-  if (currentIndex < 0) {
-    currentIndex = images.length - 1;
-  }
-  $(".lightboxImage").attr("src", images[currentIndex]);
-  });
-
-
-  nextButton.click(function() {
-    currentIndex++;
-  if (currentIndex >= images.length) {
-    currentIndex = 0;
-  }
-  $(".lightboxImage").attr("src", images[currentIndex]);
-  });
     },
     showItemTags(gallery, position, tags) {
       let tagItems =
@@ -278,7 +240,7 @@
         return;
       }
       $(".active-tag").removeClass("active active-tag");
-      $(this).addClass("active-tag");
+      $(this).addClass("active active-tag");
 
       let tag = $(this).data("images-toggle");
 
@@ -299,3 +261,4 @@
     }
   };
 })(jQuery);
+

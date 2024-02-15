@@ -4,51 +4,18 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Nina Carducci</title>
-	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="./assets/style.min.css">
+	<link rel="stylesheet" href="./assets/bootstrap/bootstrap.min.css" defer>
+	<link rel="stylesheet" href="./assets/style.min.css" defer>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
-	<script src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-	<script src="./assets/maugallery.min.js"></script>
-	<script src="./assets/scripts.js"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>	
 	<meta name="description" content="Site de la photographe Nina carducci, photos de mariages, photos de concerts, photos de portraits, photos d'entreprises.">
-	<script type="application/ld+json">
-        {
-          "@context": "https://schema.org/",
-          "@type": "LocalBusiness",
-          "name": "Nina Carducci",
-          "image": "https://github.com/azotaz/nina-carducci/blob/main/assets/images/nina.AVIF",
-          "@id": "",
-          "url": "https://azotaz.github.io/nina-carducci/",
-          "telephone": "05 56 67 78 89",
-          "priceRange": "50Euros 400Euros",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "68 avenue Alsace-Lorraine",
-            "addressLocality": "Bordeaux",
-            "postalCode": "33200",
-            "addressCountry": "FR"
-          },
-          "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 44.846600923514515, ,
-            "longitude": -0.6064721269907245
-          },
-          "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-            "opens": "10:00",
-            "closes": "19:00"
-          }
-        }
-    </script>
+	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Spectral:ital,wght@0,400;1,300;1,400;1,800&display=swap" rel="stylesheet">
+	
 </head>
 <body>
 <div class="top-header">
 	<h1 class="name">Nina Carducci</h1>
-	<div class="nav">   
+	<nav class="nav">   
 		<ul>
 			<li><a href="#about">À propos</a></li>
 			<li><a href="#gallery">Galerie</a></li>
@@ -56,9 +23,9 @@
 			<li><a href="#contact">Contact</a></li>
 			<li><a class="social-link" href="https://www.instagram.com/ninacarducci.photo/?hl=fr" target="_blank"><img src="assets/images/instagram.png" alt="instagram"></a></li>
 		</ul>
-	</div>
+	</nav>
 </div>
-<div id="header">
+<header id="header">
 
 	<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 		<div class="carousel-indicators">
@@ -86,7 +53,7 @@
 			<span class="visually-hidden">Next</span>
 		</button>
 	</div>
-</div>
+</header>
 <div id="about">
 	<div class="picture left">
 		<img src="./assets/images/nina.AVIF" alt="Photo de moi">
@@ -166,7 +133,7 @@
 		<figcaption class="quote__author">- Richard Avedon</figcaption>
 	</figure>
 </div>
-<div id="contact">
+<footer id="contact">
 	<div class="container">
 		<div class="form-container">
 			<h3>Une question ? Une demande de devis ?</h3>
@@ -185,6 +152,41 @@
 			<img src="./assets/images/camera.AVIF" alt="appareil photo">
 		</div>
 	</div>
-</div>
+</footer>
 </body>
+	<script  src="./assets/bootstrap/bootstrap.bundle.min.js"></script>
+	<script  src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" ></script>
+	<script  src="./assets/maugallery.min.js"></script>
+	<script  src="./assets/scripts.js" ></script>
+
+	<script type="application/ld+json" defer>
+		{
+		  "@context": "https://schema.org/",
+		  "@type": "LocalBusiness",
+		  "name": "Nina Carducci",
+		  "image": "https://github.com/azotaz/nina-carducci/blob/main/assets/images/nina.AVIF",
+		  "@id": "",
+		  "url": "https://azotaz.github.io/nina-carducci/",
+		  "telephone": "05 56 67 78 89",
+		  "priceRange": "50Euros 400Euros",
+		  "address": {
+			"@type": "PostalAddress",
+			"streetAddress": "68 avenue Alsace-Lorraine",
+			"addressLocality": "Bordeaux",
+			"postalCode": "33200",
+			"addressCountry": "FR"
+		  },
+		  "geo": {
+			"@type": "GeoCoordinates",
+			"latitude": 44.846600923514515, ,
+			"longitude": -0.6064721269907245
+		  },
+		  "openingHoursSpecification": {
+			"@type": "OpeningHoursSpecification",
+			"dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+			"opens": "10:00",
+			"closes": "19:00"
+		  }
+		}
+	</script>
 </html>
